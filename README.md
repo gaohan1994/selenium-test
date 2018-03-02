@@ -1,4 +1,3 @@
-<!-- 
 
 步骤
 1 npm i
@@ -24,5 +23,3 @@ Javascript Doc: http://seleniumhq.github.io/selenium/docs/api/javascript/
 
 目标
 模拟一次给网易云音乐人发送私信  完成。 
-
--->
