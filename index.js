@@ -44,7 +44,8 @@ async function example3 () {
         await driver.sleep(500);
         await driver.findElement(By.className('u-txt area j-flag')).sendKeys('张惠妹真棒！非常喜欢你的歌');
         await driver.sleep(500);
-        await driver.findElement(By.className('f-fr u-btn u-btn-1 j-flag')).click();
+        
+        // await driver.findElement(By.className('f-fr u-btn u-btn-1 j-flag')).click();
     } finally {
         await driver.quit();
     }
