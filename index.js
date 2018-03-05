@@ -6,11 +6,15 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
  */
 async function example1() {
     let driver = await new Builder().forBrowser('chrome').build();
-
-    await driver.get('https://www.taobao.com/');
-    let search_box = await driver.findElement(By.id('q'));
-    await search_box.sendKeys('book');
-    await driver.findElement(By.css("button[type='submit']")).click();
+    try {
+        await driver.get('https://www.taobao.com/');
+        let search_box = await driver.findElement(By.id('q'));
+        await search_box.sendKeys('book');
+        await driver.findElement(By.css("button[type='submit']")).click();
+        await driver.sleep(1000);
+    } finally {
+        await driver.quit();
+    }
 }
 
 /**
@@ -19,10 +23,14 @@ async function example1() {
  */
 async function example2 () {
     let driver = await new Builder().forBrowser('chrome').build();
-    await driver.get('http://music.163.com/#/user/home?id=49642138');
-    
-    await driver.switchTo().frame(0); 
-    await driver.findElement(By.css("a[data-action='send']")).click();    
+    try {
+        await driver.get('http://music.163.com/#/user/home?id=49642138');
+        await driver.switchTo().frame(0); 
+        await driver.findElement(By.css("a[data-action='send']")).click();  
+        await driver.sleep(1000);  
+    } finally {
+        await driver.quit();
+    }
 }
 
 /**
@@ -60,4 +68,4 @@ async function example3 () {
 
 // example1();
 // example2();
-example3();
+// example3();
