@@ -13,6 +13,10 @@ async function example1() {
     await driver.findElement(By.css("button[type='submit']")).click();
 }
 
+/**
+ * demo 2 测试是否可以转换iframe
+ * 
+ */
 async function example2 () {
     let driver = await new Builder().forBrowser('chrome').build();
     await driver.get('http://music.163.com/#/user/home?id=49642138');
@@ -21,13 +25,16 @@ async function example2 () {
     await driver.findElement(By.css("a[data-action='send']")).click();    
 }
 
-/*
-    http://music.163.com/#/user/home?id=6228671 李荣浩
-    http://music.163.com/#/user/home?id=49642138 三无
-    http://music.163.com/#/user/home?id=29879272 张惠妹
-*/
-
+/**
+ * demo 3 测试完成一次私信操作
+ * 
+ */
 async function example3 () {
+    /*
+        http://music.163.com/#/user/home?id=6228671 李荣浩
+        http://music.163.com/#/user/home?id=49642138 三无
+        http://music.163.com/#/user/home?id=29879272 张惠妹
+    */
     let driver = await new Builder().forBrowser('chrome').build();
     try {
         await driver.get('http://music.163.com/#/user/home?id=29879272');
