@@ -46,7 +46,6 @@ async function example3 () {
     let driver = await new Builder().forBrowser('chrome').build();
     try {
         await driver.get('http://music.163.com/#/user/home?id=29879272');
-        
         await driver.findElement(By.css('a[data-action="login"]')).click();
         await driver.findElement(By.className('u-btn2-2')).click();
         await driver.findElement(By.css('input[placeholder="请输入手机号"]')).sendKeys('18259020894');
@@ -66,6 +65,6 @@ async function example3 () {
     }
 }
 
-// example1();
+example1();
 // example2();
 // example3();
